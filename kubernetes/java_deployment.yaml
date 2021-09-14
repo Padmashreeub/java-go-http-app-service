@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: java-http-app
+  name: java-http-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: java-http-app
+  template:
+    metadata:
+      labels:
+        name: java-http-app
+    spec:
+      containers:
+      - name: java-http-app
+        image: java-webserver:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+      

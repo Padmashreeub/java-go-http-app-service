@@ -1,0 +1,45 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: http-app-gateway
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "*"
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: http-app
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - http-app-gateway
+  http:
+  - match:
+    - uri:
+        exact: /hotels
+    - uri:
+        exact: /metrics
+    - uri:
+        exact: /ready
+    - uri:
+        exact: /health
+    route:
+    - destination:
+        host: go-http-app
+        port:
+          number: 8080
+      weight: 70
+    - destination:
+        host: java-http-app
+        port:
+          number: 8080
+      weight: 30

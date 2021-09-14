@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    name: go-http-app
+  name: go-http-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: go-http-app
+  template:
+    metadata:
+      labels:
+        name: go-http-app
+    spec:
+      containers:
+      - name: go-http-app
+        image: golang-webserver:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+      

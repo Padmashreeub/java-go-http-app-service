@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: go-http-app
+  name: go-http-app
+spec:
+  ports:
+  - name: http-go-app
+    port: 8080
+    targetPort: 8080
+  selector:
+    name: go-http-app
