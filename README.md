@@ -16,7 +16,6 @@ Build dockerfiles from ```docker/go``` and ```docker/java``` by executing ```doc
 
 ## Kubernetes Manifests
 
-
 - java_deployment.yaml -> Deployment for java application
 - go_deployment.yaml -> Deployment for go application
 - go_service.yaml -> Service for go application
