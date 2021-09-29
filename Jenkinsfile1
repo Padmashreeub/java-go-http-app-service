@@ -11,6 +11,11 @@ pipeline{
       }
         
         stages{
+	      stage('git clone'){
+	      steps{
+	      		git 'https://github.com/chiju/java-go-http-app-service.git'
+		}
+		}
               stage('build'){
 		      steps {
 			      script{
