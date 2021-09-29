@@ -19,7 +19,8 @@ pipeline{
               stage('build'){
 		steps {
 			script{
-                sh '''cd /var/lib/jenkins/workspace/first_pipeline/docker/java
+                sh '''pwd
+		cd /var/lib/jenkins/workspace/first_pipeline/docker/java
 		docker build . -t chiju/java-app:$Docker_tag
 		'''                
                 withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
