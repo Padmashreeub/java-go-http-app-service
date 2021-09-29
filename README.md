@@ -28,6 +28,7 @@ Build dockerfiles from ```docker/go``` and ```docker/java``` by executing ```doc
 
 ## Directory structure
 
+
 ```bash
  |-docker
  | |-go
