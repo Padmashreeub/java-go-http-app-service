@@ -27,6 +27,7 @@ pipeline{
                 sh '''docker login -u chiju -p $docker_password
                 docker push chiju/java-app:$Docker_tag
 		'''
+		
                 }
                 
 			      }
