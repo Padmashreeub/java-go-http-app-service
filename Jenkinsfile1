@@ -20,11 +20,11 @@ pipeline{
 		steps {
 			script{
                 sh '''cd /var/lib/jenkins/workspace/first_pipeline/docker/java
-		sudo docker build . -t chiju/java-app:$Docker_tag
+		docker build . -t chiju/java-app:$Docker_tag
 		'''                
                 withCredentials([string(credentialsId: 'dockerhub', variable: 'docker_credentials')]) {
                 sh '''docker login -u chiju -p $dockerhub
-                sudo docker push chiju/java-app:$Docker_tag
+                docker push chiju/java-app:$Docker_tag
 		'''
                 }
                 
