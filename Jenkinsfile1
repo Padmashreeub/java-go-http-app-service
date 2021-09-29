@@ -12,13 +12,13 @@ pipeline{
         
         stages{
 	      stage('git clone'){
-	      steps{
+	      	steps{
 	      		git 'https://github.com/chiju/java-go-http-app-service.git'
 		}
 		}
               stage('build'){
-		      steps {
-			      script{
+		steps {
+			script{
                 sh '''cd /var/lib/jenkins/workspace/first_pipeline/docker/java
 		docker build . -t chiju/java-app:$Docker_tag
 		'''                
