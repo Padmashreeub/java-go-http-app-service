@@ -22,7 +22,7 @@ pipeline{
                 sh '''pwd
 		cd /var/lib/jenkins/workspace/first_pipeline/docker/java
 		docker build . -t chiju/java-app:$Docker_tag
-		'''                
+		'''	
                 withCredentials([string(credentialsId: 'docker_password', variable: 'docker_password')]) {
                 sh '''docker login -u chiju -p $docker_password
                 docker push chiju/java-app:$Docker_tag
