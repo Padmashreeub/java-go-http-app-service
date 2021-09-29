@@ -10,6 +10,8 @@ Added readiness and liveness probes, redirected homepage to ```/hotels``` page, 
 3) Deploy app using kubernetes manifests from ```kubernetes``` folder using ```kubectl create -f .```.
 
 
+
+
 ## Building Dockerfiles
 
 Build dockerfiles from ```docker/go``` and ```docker/java``` by executing ```docker build -t golang-webserver:latest .``` and ```docker build -t java-webserver:latest .``` respectively
