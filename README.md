@@ -24,8 +24,6 @@ Build dockerfiles from ```docker/go``` and ```docker/java``` by executing ```doc
 - autoscaler-go.yaml -> Autoscaler for go application
 - http-app-gateway.yaml -> Gateway for both application in istio
 
-
-
 ## Directory structure
 
 
